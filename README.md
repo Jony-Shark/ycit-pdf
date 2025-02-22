@@ -1,6 +1,13 @@
 # ycit-pdf
 Test task solution. Moved json data to `data` subfolder.
 
+## Require
+- PHP 8.2 is required as one package requirement
+
+## Required packages
+-  ```chillerlan/php-qrcode``` to read QR codes
+-  ```mpdf/mpdf``` to generate PDF
+
 ## Working
 - Loop over folders and check every 1.png file to read QRcode to condition
 - Save folders to an array
