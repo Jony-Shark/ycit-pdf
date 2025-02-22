@@ -1,6 +1,6 @@
 {
     "platform": {
-        "php": "7.4.33"
+        "php": "8.2.4"
     },
     "require": {
         "chillerlan/php-qrcode": "^5.0",
