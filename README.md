@@ -1,11 +1,11 @@
 # ycit-pdf
-Test task solution.
+Test task solution. Moved json data to `data` subfolder.
 
 ## Working
 - Loop over folders and check every 1.png file to read QRcode to condition
 - Save folders to an array
 - Order directories by name
-- Get data from JSON to generae a simple html page to PDF
+- Get data from JSON to generate a simple html page to PDF
 - Check & merge files into a PDF
 - return or save a PDF to pdfs folder
 
