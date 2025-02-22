@@ -2,7 +2,7 @@
 Test task solution. Moved json data to `data` subfolder.
 
 ## Require
-- PHP 8.2 is required as one package requirement
+- PHP 8.2 is required as a package dependency
 
 ## Required packages
 -  ```chillerlan/php-qrcode``` to read QR codes
