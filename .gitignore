@@ -1,0 +1,4 @@
+# Packages
+/composer.lock
+/vendor/
+auth.json

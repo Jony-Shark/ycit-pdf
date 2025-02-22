@@ -1,0 +1,14 @@
+{
+    "platform": {
+        "php": "7.4.33"
+    },
+    "require": {
+        "chillerlan/php-qrcode": "^5.0",
+        "mpdf/mpdf": "^8.2"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
