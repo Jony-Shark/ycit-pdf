@@ -3,6 +3,9 @@ require __DIR__ . "/vendor/autoload.php";
 
 use ycit\GeneratePdfFromFax;
 
+/** 
+* Get source data file.
+*/
 $rawJson = file_get_contents('./data/people.json');
 
 if (isset($_GET['people']) && $_GET['people']) {
@@ -16,17 +19,20 @@ if (isset($_GET['people']) && $_GET['people']) {
      */
     function getPeopleFromUuid($rawJson, $uuid)
     {
+        // Check 'uuid' availablity.
         if (!$uuid) {
             error_log('No ID available!');
             return false;
         }
         $srcJson = json_decode($rawJson, false);
 
+        // Check decoded json.
         if (!$srcJson) {
             error_log('Empty or incorrect json database!');
             return false;
         }
 
+        // Filter source data with 'uuid'.
         $peoples = array_filter(
             $srcJson,
             function($people) use ($uuid) {
@@ -34,6 +40,7 @@ if (isset($_GET['people']) && $_GET['people']) {
             }
         );
 
+        // Check if peoples are empty.
         if (!$peoples) {
             error_log('Uuid not found.');
             return false;
@@ -56,10 +63,13 @@ if (isset($_GET['people']) && $_GET['people']) {
 } else {
     $srcJson = json_decode($rawJson, false);
 
+    // Check decoded json.
     if (!$srcJson) {
         error_log('Empty or incorrect json database!');
         exit;
     }
+
+    // Loop peoples to collect faxes.
     foreach ($srcJson as $people) {
         $generator = new GeneratePdfFromFax($people, 'F');
         $generator->generatePdf();
